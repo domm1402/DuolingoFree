@@ -25,3 +25,8 @@ The built-in live playground executes HTML, CSS and JavaScript locally. Lessons 
 
 ## Project identity
 Duo Academy is an independent personal learning project. Its interface, mascot and lesson content are original and are not official Duolingo software. The “Super Duolingo” banner is a label for the app's own unlocked personal feature set, not an official Duolingo subscription or account.
+
+
+## Android APK
+
+The repository includes a native Android WebView wrapper in `android/`. Every push to `main` builds a debug APK with GitHub Actions. Open the repository's **Actions** tab, select **Build Duo Academy APK**, open the latest successful run, and download the `duo-academy-android-apk` artifact. Extract the ZIP to get `app-debug.apk`, then install it on your Android device. The debug APK is suitable for personal testing; a signed release build is not configured yet.
