@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#58cc02">
+  <meta name="description" content="Duo Academy: learn languages, coding and more with bite-sized lessons.">
+  <title>Duo Academy</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Duo Academy home"><span class="brand-mark">D</span><span>Duo Academy</span></a>
+      <div class="top-stats">
+        <div class="stat"><span>🔥</span><b id="streak">1</b></div>
+        <div class="stat"><span>💎</span><b id="gems">500</b></div>
+        <div class="stat"><span>⚡</span><b id="xp">0</b></div>
+        <button class="avatar" id="profileButton" aria-label="Profile">🙂</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <p class="eyebrow">YOUR LEARNING ADVENTURE</p>
+          <h1>Small lessons.<br><span>Big progress.</span></h1>
+          <p class="hero-copy">Build a daily habit and learn something brilliant.</p>
+          <div class="hero-actions">
+            <button class="primary" id="continueButton">Continue learning <span>→</span></button>
+            <span class="super-pill">✦ SUPER ACTIVE</span>
+          </div>
+        </div>
+        <div class="mascot" aria-label="Friendly green learning mascot" role="img"><div class="mascot-eyes"><i></i><i></i></div><div class="mascot-beak"></div><div class="mascot-feet"></div></div>
+      </section>
+
+      <section class="super-banner">
+        <div class="super-icon">✦</div>
+        <div><strong>You have Super Duolingo!</strong><p>Unlimited hearts, personalised practice and every course unlocked.</p></div>
+        <span class="active-label">ACTIVE</span>
+      </section>
+
+      <div class="layout">
+        <section class="learning">
+          <div class="section-heading"><div><p class="eyebrow">YOUR PATH</p><h2>Choose what to learn</h2></div><button class="text-button" id="allCoursesButton">All courses ↗</button></div>
+          <div class="course-tabs" id="courseTabs">
+            <button class="tab active" data-category="languages">🌍 Languages</button>
+            <button class="tab" data-category="coding">💻 Coding</button>
+            <button class="tab" data-category="skills">🧠 Other skills</button>
+          </div>
+          <div id="courseContent"></div>
+        </section>
+
+        <aside class="sidebar">
+          <div class="side-card league-card"><div class="side-title"><span>🏆</span><b>Weekly league</b></div><h3>Bronze League</h3><p>Earn XP to climb the leaderboard.</p><div class="league-progress"><span></span></div><small>0 / 100 XP to promotion</small></div>
+          <div class="side-card"><div class="side-title"><span>🎯</span><b>Daily quests</b></div><div class="quest"><span>Complete 1 lesson</span><b id="questLessons">0/1</b></div><div class="quest-track"><span id="questBar"></span></div><div class="quest"><span>Earn 20 XP</span><b id="questXp">0/20</b></div><div class="quest-track"><span id="questXpBar"></span></div></div>
+          <div class="side-card"><div class="side-title"><span>✨</span><b>Your achievements</b></div><div class="achievement"><span>🌱</span><div><b>First steps</b><small>Complete your first lesson</small></div><span id="firstBadge">🔒</span></div><div class="achievement"><span>🔥</span><div><b>On a roll</b><small>Build a 3-day streak</small></div><span>🔒</span></div></div>
+        </aside>
+      </div>
+    </main>
+
+    <nav class="bottom-nav" aria-label="Main navigation">
+      <button class="nav-item selected" data-view="learn"><span>🗺️</span>Learn</button>
+      <button class="nav-item" data-view="practice"><span>💪</span>Practice</button>
+      <button class="nav-item" data-view="leaderboard"><span>🏆</span>League</button>
+      <button class="nav-item" data-view="profile"><span>👤</span>Profile</button>
+    </nav>
+  </div>
+
+  <dialog id="lessonDialog" class="lesson-dialog">
+    <div class="lesson-top"><button id="closeLesson" class="close-button">✕</button><div class="progress-track"><span id="lessonProgress"></span></div><span class="hearts">♥ <b>∞</b></span></div>
+    <div id="lessonBody"></div>
+  </dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
