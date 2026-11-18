@@ -50,4 +50,11 @@ const languageVoices={spanish:"es-ES",french:"fr-FR",german:"de-DE",japanese:"ja
 const lessonBody=$("#lessonBody");
 if("speechSynthesis" in window&&lessonBody){new MutationObserver(()=>{const prompt=lessonBody.querySelector(".lesson-prompt");if(!prompt||prompt.querySelector(".speak-button"))return;const button=document.createElement("button");button.className="tool-chip speak-button";button.type="button";button.textContent="🔊 Listen";prompt.append(" ",button);button.onclick=()=>{const text=lessonBody.querySelector("h2")?.textContent+" "+lessonBody.querySelector(".question-card p")?.textContent;const utterance=new SpeechSynthesisUtterance(text);utterance.lang=languageVoices[state.course?.id]||"en-GB";speechSynthesis.cancel();speechSynthesis.speak(utterance);};}).observe(lessonBody,{childList:true,subtree:true});}
 
+
+/* More language courses for the course catalogue. */
+const moreHumanLanguages=[
+["portuguese","🇵🇹","Portuguese","Olá","Hello"],["korean","🇰🇷","Korean","안녕하세요","Hello"],["chinese","🇨🇳","Chinese","你好","Hello"],["arabic","🇸🇦","Arabic","مرحبا","Hello"],["russian","🇷🇺","Russian","Привет","Hello"],["hindi","🇮🇳","Hindi","नमस्ते","Hello"],["dutch","🇳🇱","Dutch","Hallo","Hello"],["swedish","🇸🇪","Swedish","Hej","Hello"],["greek","🇬🇷","Greek","Γεια σου","Hello"],["turkish","🇹🇷","Turkish","Merhaba","Hello"],["polish","🇵🇱","Polish","Cześć","Hello"],["norwegian","🇳🇴","Norwegian","Hei","Hello"],["danish","🇩🇰","Danish","Hej","Hello"],["ukrainian","🇺🇦","Ukrainian","Привіт","Hello"],["irish","🇮🇪","Irish","Dia dhuit","Hello"],["swahili","🇰🇪","Swahili","Jambo","Hello"]
+];
+for(const [id,flag,name,word,meaning] of moreHumanLanguages){if(!courses.languages.some(c=>c.id===id))courses.languages.push({id,flag,name,level:"Beginner · starter course",unit:name+" basics",lessons:[["Choose the correct translation",meaning,word,[word,"Goodbye","Thank you","Please"]],["Translate this greeting",word,meaning,[meaning,"Good night","See you later","Excuse me"]]});}
+
 })();
