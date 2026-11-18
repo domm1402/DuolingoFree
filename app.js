@@ -48,3 +48,6 @@ $("#allCoursesButton").addEventListener("click",()=>{state.course=null;renderCou
 $("#profileButton").addEventListener("click",()=>toast("Your learning profile is coming soon."));
 document.querySelectorAll(".nav-item").forEach(b=>b.addEventListener("click",()=>{document.querySelectorAll(".nav-item").forEach(x=>x.classList.remove("selected"));b.classList.add("selected");if(b.dataset.view==="practice")toast("Practice sessions are coming soon.");else if(b.dataset.view==="leaderboard")toast("Your league leaderboard is coming soon.");else if(b.dataset.view==="profile")toast("Your profile is coming soon.");else window.scrollTo({top:0,behavior:"smooth"});}));
 renderCourses();updateStats();
+
+// Theme preference is stored locally. Dark mode is the default.
+(()=>{const button=document.getElementById("themeToggle");if(!button)return;const saved=localStorage.getItem("duo-theme")||"dark";document.body.classList.toggle("dark-theme",saved==="dark");const draw=()=>{const dark=document.body.classList.contains("dark-theme");button.textContent=dark?"☀️":"🌙";button.setAttribute("aria-label",dark?"Switch to light mode":"Switch to dark mode");button.title=dark?"Switch to light mode":"Switch to dark mode";};draw();button.addEventListener("click",()=>{const dark=document.body.classList.toggle("dark-theme");localStorage.setItem("duo-theme",dark?"dark":"light");draw();});})();
