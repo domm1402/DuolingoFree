@@ -57,4 +57,5 @@ const moreHumanLanguages=[
 ];
 for(const [id,flag,name,word,meaning] of moreHumanLanguages){if(!courses.languages.some(c=>c.id===id))courses.languages.push({id,flag,name,level:"Beginner · starter course",unit:name+" basics",lessons:[["Choose the correct translation",meaning,word,[word,"Goodbye","Thank you","Please"]],["Translate this greeting",word,meaning,[meaning,"Good night","See you later","Excuse me"]]});}
 
+renderCourses();
 })();
