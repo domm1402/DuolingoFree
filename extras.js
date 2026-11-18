@@ -40,4 +40,14 @@ const oldRender=renderCourses;
 renderCourses=function(){oldRender();$("#courseSearch").value="";};
 const savedDays=get("activity",[]);let runStreak=0;for(let i=0;i<365;i++){const d=new Date();d.setDate(d.getDate()-i);if(savedDays.includes(d.toISOString().slice(0,10)))runStreak++;else if(i>0)break;}$("#streak").textContent=Math.max(1,runStreak);$("#gems").textContent=Number(localStorage.getItem("duo-gems")||500);
 
+
+/* Broader programming-language catalogue and spoken prompts. */
+const moreLanguages=[
+["dart","🎯","Dart"],["scala","🔴","Scala"],["perl","🐪","Perl"],["lua","🌙","Lua"],["bash","⌨️","Bash"],["powershell","🔷","PowerShell"],["r","📊","R"],["matlab","📐","MATLAB"],["assembly","🧩","Assembly"],["solidity","♦️","Solidity"],["elixir","💧","Elixir"],["haskell","λ","Haskell"],["clojure","🟢","Clojure"],["objective-c","🍏","Objective-C"],["groovy","🎵","Groovy"],["julia","🟣","Julia"],["fortran","🧮","Fortran"],["visual-basic","🪟","Visual Basic"],["fsharp","🔹","F#"],["ocaml","🐫","OCaml"],["cobol","🏛️","COBOL"],["prolog","🧠","Prolog"]
+];
+for(const [id,flag,name] of moreLanguages){if(!courses.coding.some(c=>c.id===id))courses.coding.push({id,flag,name,level:"Beginner to advanced",unit:name+" foundations",lessons:[["What is "+name+" used for?","Building software and solving problems","Building software and solving problems",["Building software and solving problems","Only editing images","Only browsing the web","Only storing files"]],["What is a variable?","A named place to store a value","A named place to store a value",["A screen button","A named place to store a value","A computer cable","A type of monitor"]]]});}
+const languageVoices={spanish:"es-ES",french:"fr-FR",german:"de-DE",japanese:"ja-JP",italian:"it-IT",welsh:"cy-GB"};
+const lessonBody=$("#lessonBody");
+if("speechSynthesis" in window&&lessonBody){new MutationObserver(()=>{const prompt=lessonBody.querySelector(".lesson-prompt");if(!prompt||prompt.querySelector(".speak-button"))return;const button=document.createElement("button");button.className="tool-chip speak-button";button.type="button";button.textContent="🔊 Listen";prompt.append(" ",button);button.onclick=()=>{const text=lessonBody.querySelector("h2")?.textContent+" "+lessonBody.querySelector(".question-card p")?.textContent;const utterance=new SpeechSynthesisUtterance(text);utterance.lang=languageVoices[state.course?.id]||"en-GB";speechSynthesis.cancel();speechSynthesis.speak(utterance);};}).observe(lessonBody,{childList:true,subtree:true});}
+
 })();
