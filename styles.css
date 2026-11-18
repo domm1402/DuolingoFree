@@ -5,3 +5,58 @@
 
 /* Additional learning tools */
 .extra-tools{display:flex;gap:9px;flex-wrap:wrap;margin:18px 0 26px}.tool-chip{border:1px solid #e5e5e5;background:#fff;border-radius:12px;padding:10px 13px;font:800 12px Nunito;cursor:pointer;color:#555}.tool-chip:hover{border-color:#58cc02;background:#f6fff0}.extra-dialog{border:0;border-radius:20px;padding:0;width:min(720px,calc(100% - 22px));max-height:88vh;box-shadow:0 20px 80px #0003}.extra-dialog::backdrop{background:#2229}.extra-head{display:flex;justify-content:space-between;align-items:center;padding:18px 22px;border-bottom:1px solid #eee}.extra-head h2{font-size:19px;margin:0}.extra-body{padding:20px 22px;max-height:70vh;overflow:auto}.extra-close{border:0;background:none;font-size:20px;color:#888;cursor:pointer}.playground{display:grid;grid-template-columns:1fr 1fr;gap:12px}.code-label{font-size:11px;font-weight:900;color:#888;display:block;margin-bottom:6px}.code-area{width:100%;min-height:210px;border:1px solid #ddd;border-radius:12px;padding:12px;background:#20242b;color:#d8e6f3;font:12px/1.6 ui-monospace,monospace;resize:vertical}.code-output{background:#10151c;color:#b7f28b;border-radius:12px;min-height:210px;padding:12px;white-space:pre-wrap;font:12px/1.6 ui-monospace,monospace;overflow:auto}.extra-actions{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.extra-field{width:100%;padding:12px;border:1px solid #ddd;border-radius:11px;font:inherit;margin:6px 0 12px}.profile-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.metric{background:#f6fbea;border-radius:13px;padding:15px}.metric b{font-size:23px;display:block;color:#449b08}.metric small{color:#777}.calendar{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}.day{background:#f3f3f3;border-radius:8px;text-align:center;padding:9px 2px;font-size:11px}.day.done{background:#dff8cd;color:#388500;font-weight:900}.flashcard{background:#f4ffe9;border:1px solid #d8efc7;border-radius:18px;padding:32px 20px;text-align:center;min-height:170px;display:grid;place-items:center;font-size:24px;font-weight:900}.leader-row{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid #eee}.leader-row b{margin-left:auto}.lesson-tip{padding:12px;background:#f4f8ff;border-radius:12px;color:#52657e;font-size:13px;margin:12px 0}@media(max-width:600px){.playground{grid-template-columns:1fr}.code-area,.code-output{min-height:150px}.profile-grid{grid-template-columns:1fr 1fr}}
+
+
+/* Dark mode: default appearance, with a persistent light-mode option. */
+body.dark-theme{--ink:#f4f6f8;--muted:#a1acb8;--line:#303944;--cream:#171d25;background:#10151c;color:var(--ink);color-scheme:dark}
+body.dark-theme .topbar{border-color:#29323d}
+body.dark-theme .brand{color:#83dc35}
+body.dark-theme .brand-mark{box-shadow:0 4px 0 #398b08}
+body.dark-theme .theme-toggle,body.dark-theme .avatar{background:#202833;border-color:#35404c;color:#f4f6f8}
+.theme-toggle{width:38px;height:38px;border:2px solid var(--line);border-radius:50%;background:#fff;color:#3c3c3c;font-size:18px;cursor:pointer;display:grid;place-items:center}
+body.dark-theme .hero{background:linear-gradient(125deg,#1b3020,#1b2723);border-color:#314b35}
+body.dark-theme .eyebrow{color:#8ebd70}
+body.dark-theme .hero h1{color:#f4f6f8}
+body.dark-theme .hero h1 span{color:#83dc35}
+body.dark-theme .hero-copy{color:#b1c0b0}
+body.dark-theme .mascot{box-shadow:inset -10px -12px #4eaa19,0 10px 0 #273d2b}
+body.dark-theme .super-banner{background:#292516;border-color:#66572c}
+body.dark-theme .super-banner strong{color:#fff1c2}
+body.dark-theme .super-banner p{color:#c4b78f}
+body.dark-theme .super-icon{background:#6b551d;color:#ffe08a}
+body.dark-theme .active-label{background:#493b19;color:#ffe08a}
+body.dark-theme .text-button{color:#91df4a}
+body.dark-theme .tab{background:#1b222b;border-color:#303944;color:#b0bac5}
+body.dark-theme .tab.active{background:#243b24;border-color:#4c8733;color:#a6ed70}
+body.dark-theme .unit-card,body.dark-theme .side-card,body.dark-theme .course-tile{background:#1a212a;border-color:#303944}
+body.dark-theme .unit-head{background:#398d0a}
+body.dark-theme .path{background:linear-gradient(#1a212a,#171d25)}
+body.dark-theme .course-tile{color:#f4f6f8}
+body.dark-theme .course-tile:hover{background:#202c24;border-color:#548c37}
+body.dark-theme .course-emoji{background:#27322a}
+body.dark-theme .side-card p,body.dark-theme .side-card small,body.dark-theme .achievement small{color:#9ba7b4}
+body.dark-theme .league-progress,body.dark-theme .quest-track{background:#35404b}
+body.dark-theme .tool-chip{background:#202833;border-color:#35404c;color:#dbe3eb}
+body.dark-theme .tool-chip:hover{background:#263b27;border-color:#58cc02}
+body.dark-theme .lesson-dialog,body.dark-theme .extra-dialog{background:#171e27;color:#f4f6f8}
+body.dark-theme .lesson-top,body.dark-theme .extra-head{border-color:#303944}
+body.dark-theme .progress-track{background:#35404b}
+body.dark-theme .answer-option{background:#202833;border-color:#3b4652;color:#f4f6f8}
+body.dark-theme .answer-option.chosen{background:#263b27;border-color:#75c83d}
+body.dark-theme .answer-option.correct{background:#1c3820;border-color:#58cc02}
+body.dark-theme .answer-option.wrong{background:#3b2427;border-color:#ff7777}
+body.dark-theme .flashcard{background:#203526;border-color:#3b6940}
+body.dark-theme .metric{background:#223326}
+body.dark-theme .metric b{color:#91df4a}
+body.dark-theme .day{background:#252e38;color:#d9e0e7}
+body.dark-theme .day.done{background:#294b2a;color:#b3f18b}
+body.dark-theme .leader-row{border-color:#303944}
+body.dark-theme .lesson-tip{background:#202d3a;color:#b9cce0}
+body.dark-theme .extra-field{background:#202833;border-color:#3b4652;color:#f4f6f8}
+body.dark-theme .code-label{color:#aab5c0}
+body.dark-theme .bottom-nav{background:#151b23;border-color:#303944}
+body.dark-theme .nav-item{color:#8e99a6}
+body.dark-theme .nav-item.selected{color:#8fe04a}
+body.dark-theme .toast{background:#edf2e8;color:#182018}
+body.dark-theme .lesson-dialog::backdrop,body.dark-theme .extra-dialog::backdrop{background:#000b}
+@media(max-width:760px){.theme-toggle{width:33px;height:33px;font-size:16px}}
