@@ -1,23 +1,27 @@
 # Duo Academy
 
-A mobile-first, bite-sized learning app for languages, coding and other skills.
+A free, mobile-first learning app for languages, programming and other skills.
 
-## Run it
-Open `index.html` in a browser, or serve this folder with any static web server.
+## Run locally
+Open `index.html` in a browser, or serve this folder with a static web server. GitHub Pages deployment is configured in `.github/workflows/pages.yml`.
 
-## Current prototype
-- Language and programming course catalogue
-- Interactive multiple-choice lessons
-- XP, gems, streak display, hearts display and daily quest progress
-- Local progress persistence with browser localStorage
+## Included
+- Language catalogue with starter courses across 20+ languages
+- Programming catalogue covering mainstream and specialist languages, plus custom course creation
+- Interactive multiple-choice lessons and progress paths
+- XP, gems, streak tracking, daily quests and achievements
+- Code playground for HTML, CSS and JavaScript, isolated in a sandboxed iframe
+- Flashcards, quick practice, spoken prompts using browser speech synthesis
+- Learner profile, daily XP goal, progress export/import
+- Gem shop items, personal league preview and streak calendar
+- Installable PWA with an offline cache for core app files
 - Responsive mobile layout
 
-## Important
-This is an independent learning app. It uses original UI artwork and sample lesson content, not Duolingo's proprietary source code or artwork. The Super Duolingo label in this personal-use prototype represents the app's own unlocked feature set; it is not an official Duolingo subscription or account.
+## Local data
+Progress is stored in the browser's local storage on the device. Use Profile → Export progress to make a backup and Import progress to restore it. Clearing browser data will remove locally stored progress unless it has been exported.
 
-## Next development steps
-- Expand course content into complete beginner-to-advanced curricula
-- Add code editor and runnable exercises
-- Add speech recognition and text-to-speech practice
-- Add account sync, real streak calendar, leagues and achievements
-- Package as an Android app
+## Execution support
+The built-in live playground executes HTML, CSS and JavaScript locally. Lessons for other programming languages are currently instructional; running those languages requires a compiler or execution service that is not bundled into this static app.
+
+## Project identity
+Duo Academy is an independent personal learning project. Its interface, mascot and lesson content are original and are not official Duolingo software. The “Super Duolingo” banner is a label for the app's own unlocked personal feature set, not an official Duolingo subscription or account.
