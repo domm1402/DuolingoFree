@@ -1,0 +1,30 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.duoacademy.app'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId 'com.duoacademy.app'
+        minSdk 23
+        targetSdk 35
+        versionCode 1
+        versionName '1.0.0'
+    }
+}
+
+def siteRoot = rootProject.projectDir.parentFile
+
+tasks.register('copyWebApp', Copy) {
+    from(siteRoot) {
+        include '**/*'
+        exclude 'android/**', '.git/**', '.github/**', '.gitignore', 'README.md'
+    }
+    into layout.projectDirectory.dir('src/main/assets/www')
+}
+
+tasks.named('preBuild').configure {
+    dependsOn tasks.named('copyWebApp')
+}
