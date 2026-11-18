@@ -15,10 +15,11 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setStatusBarColor(android.graphics.Color.rgb(88, 204, 2));
+        getWindow().setStatusBarColor(android.graphics.Color.rgb(16, 21, 28));
+        getWindow().getDecorView().setSystemUiVisibility(0);
         getWindow().setNavigationBarColor(android.graphics.Color.BLACK);
         webView = new WebView(this);
-        webView.setBackgroundColor(android.graphics.Color.WHITE);
+        webView.setBackgroundColor(android.graphics.Color.rgb(16, 21, 28));
         WebSettings settings = webView.getSettings();
         settings.setJavaScriptEnabled(true);
         settings.setDomStorageEnabled(true);
