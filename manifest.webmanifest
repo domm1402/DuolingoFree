@@ -1,0 +1,12 @@
+{
+  "name": "Duo Academy",
+  "short_name": "Duo Academy",
+  "description": "Learn languages, programming and new skills with bite-sized lessons.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#58cc02",
+  "orientation": "portrait-primary",
+  "icons": [{"src":"icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
+}
